@@ -18,9 +18,7 @@ while True:
     img = ImageGrab.grab(bbox=(0, 0, width, height))
     img_np = np.array(img)
     img_final = cv2.cvtColor(img_np, cv2.COLOR_BGR2RGB)
-    _, frame = webcam.read()
-    fr_height, fr_width, _ = frame.shape
-    img_final[0:fr_height, 0: fr_width, :] = frame[0: fr_height, 0: fr_width, :]
+   
     cv2.imshow('Secret Capture', img_final)
 
     # cv2.imshow('webcam', frame)
